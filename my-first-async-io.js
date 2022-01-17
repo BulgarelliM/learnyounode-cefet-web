@@ -1,8 +1,9 @@
 //  Write a program that uses a single asynchronous filesystem operation to
 //  read a file and print the number of newlines it contains to the console
 //  (stdout), similar to running cat file | wc -l.
+// https://stackoverflow.com/questions/10058814/get-data-from-fs-readfile
+// https://www.geeksforgeeks.org/node-js-fs-readfile-method/
 let tamanho = 0;
-let myNumber = 0;
 const fs = require("fs");
 path = process.argv[2];
 
