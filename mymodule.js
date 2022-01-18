@@ -7,7 +7,7 @@ module.exports = function exporta (caminho, extensao, callback) {
       return callback(err);
     }
     for (let arquivo of list) {
-      if (path.extname(arquivo) == "." + extensao) {
+      if (path.extname(arquivo) == `.${extensao}`) {
         lista.push(arquivo);
       }
     }

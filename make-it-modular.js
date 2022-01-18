@@ -10,15 +10,16 @@ let caminho = process.argv[2];
 let extensao = process.argv[3];
 
 async function result(caminho, extensao) {
-  meumodulo(caminho, extensao, function retorna(_err, list) {
-    try {
-      for (let arquivo of list) {
-        console.log(arquivo);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  });
+  meumodulo(caminho, extensao, retorna);
+}
+
+function retorna(_err, list) {
+  if (_err) {
+    console.error(_err);
+  }
+  for (let arquivo of list) {
+    console.log(arquivo);
+  }
 }
 
 result(caminho, extensao);
