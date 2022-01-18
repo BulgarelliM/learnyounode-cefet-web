@@ -6,7 +6,7 @@
 // https://github.com/maxogden/art-of-node#callbacks
 let tamanho = 0;
 const fs = require("fs");
-path = process.argv[2];
+let path = process.argv[2];
 
 function somaLinhas(path) {
   fs.readFile(path, 'utf8', function leitura(err, data) {

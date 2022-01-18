@@ -3,19 +3,19 @@
 // Fonte: https://nodejs.org/api/path.html#path_path_extname_p
 // https://nodejs.org/api/fs.html#fspromisesreaddirpath-options
 
-caminho = process.argv[2];
-ext = process.argv[3];
-const fs = require('fs');
-const path = require('path');
+let caminho = process.argv[2];
+let ext = process.argv[3];
+const fs = require("fs");
+const path = require("path");
 
-fs.readdir(caminho, function leitura(err, list){
-    try {
-        for (const file of list){
-            if (path.extname(file) == '.'+ext){
-                console.log(file);
-            }
-        }
-      } catch (err) {
-        console.error(err);
+fs.readdir(caminho, function leitura(err, list) {
+  try {
+    for (const file of list) {
+      if (path.extname(file) == "." + ext) {
+        console.log(file);
       }
+    }
+  } catch (err) {
+    console.error(err);
+  }
 });
