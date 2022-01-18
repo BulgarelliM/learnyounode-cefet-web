@@ -9,8 +9,8 @@ const meumodulo = require("./mymodule.js");
 let caminho = process.argv[2];
 let extensao = process.argv[3];
 
-async function result() {
-  await meumodulo(caminho, extensao, function retorna(_err, list) {
+async function result(caminho, extensao) {
+  meumodulo(caminho, extensao, function retorna(_err, list) {
     try {
       for (let arquivo of list) {
         console.log(arquivo);
@@ -21,4 +21,4 @@ async function result() {
   });
 }
 
-result();
+result(caminho, extensao);
