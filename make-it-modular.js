@@ -11,15 +11,17 @@ let extensao = process.argv[3];
 
 async function result(caminho, extensao) {
   meumodulo(caminho, extensao, retorna);
-}
+};
 
 function retorna(_err, list) {
-  if (_err) {
-    console.error(_err);
+  try{
+    for (let arquivo of list) {
+      console.log(arquivo);
+    }
   }
-  for (let arquivo of list) {
-    console.log(arquivo);
+  catch (_err) {
+    throw (_err);
   }
-}
+};
 
 result(caminho, extensao);
